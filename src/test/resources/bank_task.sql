@@ -2,7 +2,7 @@
 
 select FirstName, LastName
 from client
-where length(LastName) < 6;
+where length(FirstName) < 6;
 
 # 2. +Вибрати львівські відділення банку.+
 select idDepartment, DepartmentCity, CountOfWorkers, FirstName, LastName, Sum, Currency
@@ -212,7 +212,7 @@ where City = (select City
               limit 1);
 
 # 27. місто чувака який набрав найбільше кредитів
-select City
+select City, FirstName
 from client
          join application a on client.idClient = a.Client_idClient
 group by Client_idClient
